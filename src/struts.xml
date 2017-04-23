@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" /><!-- 指定Web应用的默认编码集 -->
+	<constant name="struts.serve.static.browserCache" value="false" /><!-- 设置浏览器是否缓存静态内容 -->
+    <constant name="struts.devMode" value="false" /><!-- 是否开发模式 这样可以打印出更详细的错误信息-->
+	<constant name="struts.configuration.xml.reload" value="true"/><!-- 修改配置文件自动加载 -->
+	
+	<package name="poetry" namespace="/manager" extends="struts-default">
+		<action name="*-*" class="com.jkxy.web.action.{1}Action" method="{2}">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="title" type="redirect">/titletangpoetry.jsp</result>
+			<result name="author" type="redirect">/authortangpoetry.jsp</result>
+			<result name="body" type="redirect">/bodytangpoetry.jsp</result>
+		</action>
+	</package>
+</struts>    
